@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Images/itens-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/spike.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 48, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 5 ), SubResource( 5 ) ],
+"loop": true,
+"name": "active",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "desable",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 6.5, 4.5 )
+
+[node name="spike" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "desable"
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, -0.5 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="." to="." method="_on_spike_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_spike_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

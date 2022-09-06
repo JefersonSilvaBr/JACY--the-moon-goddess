@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Retro Gaming.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Story.gd" type="Script" id=2]
+[ext_resource path="res://Images/keyRight.png" type="Texture" id=3]
+[ext_resource path="res://Images/keyLeftt.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 1 )
+
+[node name="Story" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0156863, 0.0196078, 0.0196078, 1 )
+
+[node name="story1" type="Label" parent="ColorRect"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = " April 22, 1500, when the Portuguese arrived on the lands that today belong to Brazil."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="story2" type="Label" parent="ColorRect"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = " Being welcomed by the indeigenous people of the region, who with great affection came very close to the Portugues, and even considered them brothers."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="story3" type="Label" parent="ColorRect"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = " But taken by the greed of seeing the most valuable miners and most beautiful Indians. The Portuguese guests begin the hunt, to take everything they think they are entitled to."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="story4" type="Label" parent="ColorRect"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = " But Jacy the very embodiment of the moon. The goddess of hunting and motherhood, she throws herself from heaven to help her people."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
+position = Vector2( 64, 532 )
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="ColorRect"]
+position = Vector2( 952, 532 )
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 3 )
