@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/bonfire.gd" type="Script" id=1]
 [ext_resource path="res://Images/itens-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Light.tscn" type="PackedScene" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -48,5 +49,11 @@ playing = true
 visible = false
 position = Vector2( 0.5, 4.5 )
 shape = SubResource( 6 )
+
+[node name="Light" parent="." instance=ExtResource( 3 )]
+position = Vector2( -0.5, 0.999977 )
+scale = Vector2( 4.94141, 5.50781 )
+texture_scale = 0.1
+energy = 0.7
 
 [connection signal="body_entered" from="." to="." method="_on_bonfire_body_entered"]
